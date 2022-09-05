@@ -1,4 +1,4 @@
-let JOURNAL = `require('/Users/devas/development/Elquent JS/journal.js')`
+let JOURNAL = require('./journal.js')
 function phi(table) {
     return (table[3] * table[0] - table[2] * table[1]) /
         Math.sqrt((table[2] + table[3]) *
@@ -7,15 +7,15 @@ function phi(table) {
             (table[0] + table[2]));
 }
 function journalEvents(journal) {
-    let events = [];
+    let uniqueEvents = [];
     for (let entry of journal) {
         for (let event of entry.events) {
-            if (!events.includes(event)) {
-                events.push(event);
+            if (!uniqueEvents.includes(event)) {
+                uniqueEvents.push(event);
             }
         }
     }
-    return events;
+    return uniqueEvents;
 }
 function tableFor(event, journal) {
     let table = [0, 0, 0, 0];
@@ -28,5 +28,15 @@ function tableFor(event, journal) {
     return table;
 }
 for (let event of journalEvents(JOURNAL)) {
-    console.log(event + ":", phi(tableFor(event, JOURNAL)));
+    let correlation = phi(tableFor(event, JOURNAL));
+    if (correlation > 0.1 || correlation < -0.1) {
+        console.log(event + ":", correlation)
+    }
 }
+for (let entry of JOURNAL) {
+    if (entry.events.includes("peanuts") &&
+        !entry.events.includes("brushed teeth")) {
+        entry.events.push("peanut teeth");
+    }
+}
+console.log(phi(tableFor("peanut teeth", JOURNAL)));
