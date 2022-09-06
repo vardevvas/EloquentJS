@@ -40,3 +40,4 @@ for (let entry of JOURNAL) {
     }
 }
 console.log(phi(tableFor("peanut teeth", JOURNAL)));
+console.log("one two three".indexOf("ee"));
