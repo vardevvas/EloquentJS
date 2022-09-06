@@ -1,6 +1,5 @@
 function range(start, end, steps = 1) {
     let theRange = []
-    let x = start > end ? 5 : 10;
     for (let x = start; start < end ? x <= end : x >= end; start < end ? x += steps : x -= steps) {
         theRange.push(x)
     }
