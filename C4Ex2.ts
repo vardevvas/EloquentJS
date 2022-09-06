@@ -9,9 +9,9 @@ function reverseElements(elemntArray) {
     let elemnto = []
     for (let elemnt of elemntArray) {
         let rev = elemnt.split("")
-        let therev = reverse(rev)
-        let strg = therev.join("")
-        elemnto.push(strg)
+        rev = reverse(rev)
+        rev = rev.join("")
+        elemnto.push(rev)
     }
     return elemnto
 }
