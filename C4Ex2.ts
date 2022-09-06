@@ -10,8 +10,8 @@ function reverseElements(elemntArray) {
     for (let elemnt of elemntArray) {
         let rev = elemnt.split("")
         let therev = reverse(rev)
-        therev.join("")
-        elemnto.push(therev)
+        let strg = therev.join("")
+        elemnto.push(strg)
     }
     return elemnto
 }
