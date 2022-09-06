@@ -8,12 +8,10 @@ function reverse(anArray) {
 function reverseElements(elemntArray) {
     let elemnto = []
     for (let elemnt of elemntArray) {
-        let parameterss = []
-        for (let theElement of elemnt) {
-            parameterss.unshift(theElement)
-        }
-        parameterss.join("")
-        elemnto.push(parameterss)
+        let rev = elemnt.split("")
+        let therev = reverse(rev)
+        therev.join("")
+        elemnto.push(therev)
     }
     return elemnto
 }
