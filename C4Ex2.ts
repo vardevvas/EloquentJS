@@ -12,7 +12,7 @@ function reverseElements(elemntArray) {
         for (let theElement of elemnt) {
             parameterss.unshift(theElement)
         }
-
+        parameterss.join("")
         elemnto.push(parameterss)
     }
     return elemnto
