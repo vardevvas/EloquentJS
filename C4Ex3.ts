@@ -4,7 +4,10 @@ function adding(anArray, theList = {}) {
     }
     else {
         theList.value = anArray[0]
-        theList.rest = adding(anArray.shift, theList)
+        anArray.shift()
+        console.log(anArray)
+        theList.rest = adding(anArray, theList)
+
     }
 }
 console.log(adding([1, 2, 3]))
