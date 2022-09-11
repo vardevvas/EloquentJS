@@ -3,6 +3,8 @@ let boj1 = {
     hight: 162,
     weight: 60
 }
+let a = Object.keys(boj1)
+console.log(boj1.a[0])
 let boj2 = {
     age: 23,
     hight: 160,
@@ -24,4 +26,21 @@ function deepEqual(x, y) {
     console.log(a, b, c, d)
     return isEqual
 }
-console.log(deepEqual(boj1, boj2))
+function deepEqual2(x, y, count = 0) {
+    let isEqual = true
+    let a = Object.keys(x)
+    let b = Object.keys(y)
+    let c = Object.values(x)
+    let d = Object.values(y)
+    if (count = a.length - 1) {
+        return isEqual
+    }
+    else {
+        if (a[count] == b[count]) {
+            if (c[r] != d[r]) {
+                isEqual = false
+            }
+        }
+    }
+}
+// console.log(Object.values(o))
