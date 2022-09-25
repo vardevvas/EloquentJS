@@ -6,6 +6,13 @@ function reduce(array, combine, start) {
     }
     return current;
 }
+function reduce(array, combine, start) {
+    let current = start;
+    for (let element of array) {
+        current = combine(current, element);
+    }
+    return current;
+}
 
 function characterCount(script) {
     return script.ranges.reduce((count, [from, to]) => {
